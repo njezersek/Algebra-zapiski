@@ -624,115 +624,122 @@ Naj bo $A$ kompleksna $m \times n$ matrika in $\overline{A}$ matrika $A$ z konju
     \item $ 0^* = 0, I^* = I $
 \end{itemize}
 
-\pagebreak
-\subsection{Odvodi}
-Odvod funkcije $f$ v točki $a \in D_f$ je
-\[f'(a) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a} = \lim_{h \to 0}\frac{f(a+h)-f(a)}{h}\]
-\setlength{\tabcolsep}{0.5em}{\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{ | c | c | }
-    \hline
-    \emph{funkcija} & \emph{odvod}\\\hline
-    $c$ & $0$ \\ \hline
-    $x^n$ & $nx^{n-1}$ \\ \hline
-    $a^x$ & $a^x\ln{a}$ \\\hline
-    $x^x$ & $x^x(1+\ln{x})$ \\\hline
-    $\ln(x)$ & $\frac{1}{x}$ \\\hline
-    $\log_{a}(x)$ & $\frac{1}{x\ln(a)}$ \\\hline
-    $\sin(x)$ & $cos(x)$ \\\hline
-    $\cos(x)$ & $-sin(x)$ \\\hline
-    $\tan(x)$ & $\frac{1}{cos^2(x)}$ \\\hline
-    $\cot(x)$ & $-\frac{1}{sin^2(x)}$ \\\hline
-    $\arcsin(x)$ & $\frac{1}{\sqrt{1-x^2}}$ \\\hline
-    $\arccos(x)$ & $-\frac{1}{\sqrt{1-x^2}}$ \\\hline
-    $\arctan(x)$ & $\frac{1}{1+x^2}$ \\\hline
-    $\textrm{arccot}(x)$ & $-\frac{1}{1+x^2}$ \\\hline
-    $\textrm{sh}(x) = \frac{e^x - e^{-x}}{2}$ & $\textrm{ch}(x)$\\\hline
-    $\textrm{ch}(x) = \frac{e^x + e^{-x}}{2}$ & $\textrm{sh}(x)$\\\hline
-    $\textrm{th}(x) = \frac{\textrm{sh}(x)}{\textrm{ch}(x)}$ & $\frac{1}{\textrm{ch}^2(x)}$\\\hline
-    $\textrm{cth}(x) = \frac{1}{\textrm{th}(x)}$ & $-\frac{1}{\textrm{sh}^2(x)}$\\\hline
-    $\textrm{arsh}(x) = \ln(x+\sqrt{x^2+1})$ & $\frac{1}{\sqrt{1+x^2}}$\\\hline
-    $\textrm{arch}(x) = \ln(x+\sqrt{x^2-1})$ & $\frac{1}{\sqrt{1-x^2}}$\\\hline
-    $\textrm{arth}(x) = \frac{1}{2}\ln{\frac{1+x}{1-x}}$ & $\frac{1}{(1+x)(1-x)}$\\\hline
-\end{tabular}
-}
+\subsubsection{Lastne vrednosti adjugirane preslikave}
+$\lambda$ je lastna vrednost $A$ $\Leftrightarrow$ $\overline{\lambda}$ lastna vrednost $A^*$
 
-\subsection{Pravila za odvajanje}
-\setlength{\tabcolsep}{0.5em}{\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{ c  c }
-    \emph{funkcija} & \emph{odvod}\\
-    $f(x)\pm g(x)$ & $f'(x)\pm g'(x)$ \\
-    $f(x)\cdot g(x)$ & $f'(x)\cdot g(x) + f(x)\cdot g'(x)$ \\
-    $\frac{f(x)}{g(x)}$ & $\frac{f'(x)\cdot g(x) - f(x) \cdot g'(x)}{g^2(x)}$ \\
-    $f(g(x))$ & $f'(g(x)) \cdot g'(x)$ \\
-    $f^{-1}(x)$ & $\frac{1}{f'(f^{-1}(x))}$
-\end{tabular}
-}
-\subsection{Uporaba odvoda}
-\begin{tabular}{ c  c }
-$f'(x) = 0 \And f''(x) < 0$ & maksimum \\
-$f'(x) = 0 \And f''(x) > 0$ & minimum \\
-$f'(x) = 0 \And f''(x) = 0$ & prevoj \\
-\\
-$f'(x) < 0$ & pada \\
-$f'(x) > 0$ & narašča \\
-\\
-$f''(x) < 0$ & konkavna \\
-$f''(x) > 0$ & konveksna \\
-\end{tabular}
+\subsection{Normalne matrike}
+Kompleksna matrika $A$ je \textbf{normalna}, če velja $A^*A = AA^*$.
 
-\subsection{Limite}
-\[\lim_{x \to \infty}(1+\frac{1}{x})^{x} = e\]
-\[\lim_{x \to 0}\frac{\sin{x}}{x} = 1\]
-\[\lim_{x \to c}f(x)^{g(x)} = \lim_{x \to c}f(x)^{\lim_{x \to c}g(x)}\]
-\subsubsection{L'Hospitalovo pravilo}
-\[\lim_{x \to c}f(x) = \lim_{x \to c}g(x) = 0\textrm{ ali } \infty \implies \lim_{x \to c}\frac{f(x)}{g(x)} = \lim_{x \to c}\frac{f'(x)}{g'(x)}\]
+Vsaka normalna matrika je kvadratna.
 
-\subsection{Rolleov izrek}
-$f:[a,b] \to\mathbb{R}$ zvezna, odvedljiva na $(a,b)$
-\[ f(a) = f(b) \implies  \exists \xi \in (a, b) : f'(\xi) = 0\]
+Vsaka normalna matrika je podobna diagonalni matriki.
 
-\subsection{Lagrangeov izrek}
-$f:[a,b] \to\mathbb{R}$ zvezna, odvedljiva na $(a,b)$
-\[\exists \xi \in (a, b) : f'(\xi) = \frac{f(b)-f(a)}{b-a}\]
-Na danem intervalu je odvod vsaj v eni točki vzporeden sekanti. 
+Lastni podprostori normalne matrike so poraoma ortogonalni.
 
-\subsection{Taylorjeva vrsta}
-Razvoj funkcije $f$ okoli točke $a$:
-\[f(x) = T_n(x) + R_n(x)\]
-\[T_n(x) = f(a) + \frac{f'(a)}{1!}(x-a) + \frac{f'(a)}{2!}(x-a)^2\ + ... + \frac{f^{(n)}(a)}{n!}(x-a)^n \]
-\[T_n(x) = \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n \]
-\[R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}; \xi \in (a, x)\]
-
-\subsection{Znane Taylorjeve vrste}
-\[e^x=1+\frac{1}{1!}x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+... = \sum_{n=0}^{\infty}\frac{x^n}{n!}\]
-\[\sin(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+...\]
-\[\cos(x)=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+...\]
-\[\frac{1}{1-x}=1+x+x^2+x^3+... = \sum_{n=0}^{\infty}x^n\]
-\[(1+x)^{\alpha}=\sum_{n=0}^{\infty}\binom{\alpha}{n}x^n\]
+$A$ je normalna $\Leftrightarrow$ $\exists P, D \textmd{ (diagonalna)} : A = PDP^{-1} \textmd{ in } P^{-1} = P^*$
 
 
-\subsection{Binom}
-\[\binom{r}{n} = \frac{r(r-1)(r-2)\cdot ... \cdot (r - n + 1)}{n!}\]
-\[\binom{r}{n} = \frac{r!}{n!(r-n)!} \text{ Če je $r \in \mathbb{N}$}\]
+\subsection{Izometirje}
+Izometirje so preslikave, ki ohranjajo razdaljo.
 
-\[(a+b)^n; n \in \mathbb{N}; |b| < |a|\]
-\[(a+b)^n = \binom{n}{0}a^nb^0+\binom{n}{1}a^{n-1}b^1+...+\binom{n}{n}a^0b^n\]
-
-\subsection{Konvergenca vrste}
-\emph{Kvocientni kriterij}
-\[\lim_{n \to \infty} |\frac{a_{n+1}}{a_n}| = R\]
-\emph{Korenski kriterij}
-\[\lim_{n \to \infty} \sqrt[n]|{a_n}| = R\]
-Če je $R<1$ vrsta konvergira, če je $R>1$ vrsta divergira, če je $R=0$ nam kriterij ne pove ničesar.
-
-\emph{Primerjalni kriterij}
-
-Če je $a_n \ge b_n \ge 0$ za vse $n$ od nekega $n$ naprej in
+Naj bosta $U$ in $V$ KVRP s skalarnim produktom. Linearna preslikava $L:U \to V$ je izometrija, če 
+\[\forall u \in U : \|Lu\|_V = \|u\|_U \]
+Naslednje trditve so ekvivalentne:
 \begin{itemize}
-    \item $\sum b_n$ divergira $\implies$ $a_n$ divergira 
-    \item $\sum b_n$ konvergira $\implies$ $a_n$ konvergira
+    \item $L$ je izometrija
+    \item $\langle Lu, Lu' \rangle_V = \langle u, u \rangle_U$ za $\forall u,u' \in U$
+    \item $L^*L = id_U$
+    \item Za vsako ortonormirano bazo $\{u_1, ..., u_n\}$ v $U$ je $\{Lu_1, ..., Lu_n\}$ ortonormirana množica v $V$.
 \end{itemize}
 
+Če imamo KVRP $V$ in $U$ z \emph{orotonormiranima bazama} $\mathcal{B}$ in $\mathcal{C}$, je $L: U\to V$ izometrija
+natanko tedaj, ko za njeno matriko $A=[L]_{\mathcal{C \leftarrow B}}$ velja $A^*A = I$.
+
+\subsection{Ortogonalne in unitarne matrike}
+Kompleksni matriki $A$, ki zadošča $A^*A = I$ pravimo \textbf{unitarna}.
+Realni unitarni matriki pravimo \textbf{ortogonalna}.
+
+Za kvadratne matrike iz $A^*A = I$ sledi $AA^* = I$. Odtod sledijo lastnosti:
+\begin{itemize}
+    \item Vsaka unitarna matrika je normalna
+    \item Vsaka unitarna matrika je obrnljiva in $A^{-1} = A^*$
+    \item Če je $A$ unitarna je tudi $A^*$ unitarna.
+\end{itemize}
+
+Grupe:
+\begin{itemize}
+    \item $\textmd{GL}(n,F)$ \textbf{splošna linearna grupa} - gurpa vseh obrnljivih $n \times n$ matrik.
+    \item $\textmd{SL}(n,F)$ \textbf{specialna linearna grupa} - gurpa vseh obrnljivih $n \times n$ matrik z $\textmd{det}$ 1.
+    \item $\textmd{U}(n)$ \textbf{splošna unitarna grupa} - gurpa vseh unitarnih $n \times n$ matrik.
+    \item $\textmd{SU}(n)$ \textbf{specialna unitarna grupa} - gurpa vseh unitarnih $n \times n$ matrik z $\textmd{det}$ 1.
+    \item $\textmd{O}(n)$ \textbf{splošna ortogonalna grupa} - gurpa vseh ortogonalnih $n \times n$ matrik.
+    \item $\textmd{SO}(n)$ \textbf{specialna orotgonalna grupa} - gurpa vseh orotogonalnih $n \times n$ matrik z $\textmd{det}$ 1.
+\end{itemize}
+
+\begin{equation*}
+    \begin{aligned}
+        \begin{matrix}
+            \textmd{GL}(n, \mathbb{C}) & \supset & \textmd{U}(n) \\
+            \cup &  & \cup \\
+            \textmd{SL}(n, \mathbb{C}) & \supset & \textmd{SU}(n) \\
+        \end{matrix}
+        \qquad \qquad
+        \begin{matrix}
+            \textmd{GL}(n, \mathbb{R}) & \supset & \textmd{O}(n) \\
+            \cup &  & \cup \\
+            \textmd{SL}(n, \mathbb{R}) & \supset & \textmd{SO}(n) \\
+        \end{matrix}
+    \end{aligned}
+\end{equation*}
+
+Lastne vrednosti \emph{unitarne matrike} imajo absolutno vrednost 1.
+Različnim lastnim vrednostim unitarne matrike pripadajo \emph{ortogonalni} lastni vektorji.
+
+\subsection{Simetričnen in hermitske matrike}
+Linearna preslikava $L:U \to V$ je \textbf{sebiadjugirana}, če velja $L=L^*$. 
+
+Kompleksna matrika $A$ je \textbf{hermitska} če $A=A^*$.
+Realnim hermitskima matrikam rečemo \textbf{simetrične}.
+
+Kompleksna matrika je \emph{hermitska} $\Leftrightarrow$ ko obstaja taka unitarna matrika $P$ in realana matrika $D$, da $A = PDP^{-1}$.
+
+Realna matrika je \emph{simetrična} $\Leftrightarrow$ ko obstaja taka orotgonalna matrika $P$ in realana diagonalna matrika $D$, da $A = PDP^{-1}$.
+
+\subsection{Determinanta}
+\begin{equation*}
+    \det \begin{bmatrix}
+        a & b\\
+        c & d\\
+    \end{bmatrix}
+    = ad - cb
+    \qquad 
+    \det \begin{bmatrix}
+        a & b & c\\
+        d & e & f\\
+        g & h & i\\
+    \end{bmatrix}
+    = aei + bfg + cdh - gec - hfa - idb
+\end{equation*}
+
+Determinanta gornjetrikotne matrike je zmnožek diagonalnih elementov.
+
+\[ \det\alpha A = \alpha^n \det A\]
+
+
+\subsection{Sled}
+Sled matrike je vsota vseh diagonalnih elementov.
+\begin{equation*}
+    \begin{aligned}
+        \textmd{tr}(A+B) &= \textmd{tr}(A) + \textmd{tr}(B) & \textmd{tr}(AB) &= \textmd{tr}(BA)
+    \end{aligned}
+\end{equation*}
+
+\subsection{Transponiranje}
+\begin{equation*}
+    \begin{aligned}
+        (A+B)^T &= A^T+B^T  &  (AB)^T &= B^TA^T
+    \end{aligned}
+\end{equation*}
 
 \end{multicols}
 \end{document}
