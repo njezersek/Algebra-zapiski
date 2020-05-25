@@ -175,29 +175,6 @@ Naj bo $V$ KVRP, naj bosta
 \[\mathcal{C} = \{v_1, ..., v_n\}\]
 bazi za $V$ in naj bo $v$ vektor.
 
-\[ v = \beta_1 u_1 + ... + \beta_n u_n \]
-\[ v = \gamma_1 v_1 + ... + \gamma_n v_n \]
-
-\[
-    \begin{bmatrix}
-        \gamma_1 \\
-        \vdots \\
-        \gamma_n \\
-    \end{bmatrix}
-    =
-    \begin{bmatrix}
-        \alpha_{1,1} & \dots & \alpha_{1,n} \\
-        \vdots & \ddots & \vdots \\
-        \alpha_{n,1} & \dots & \alpha_{n,n} \\
-    \end{bmatrix}
-    \cdot
-    \begin{bmatrix}
-        \beta_1 \\
-        \vdots \\
-        \beta_n \\
-    \end{bmatrix}
-\]
-
 \[ [v]_{\mathcal{C}} = P_{\mathcal{C} \leftarrow \mathcal{B}} \cdot [v]_{\mathcal{B}} \]
 
 \[P_{\mathcal{D} \leftarrow \mathcal{B}} = P_{\mathcal{D} \leftarrow \mathcal{C}} \cdot P_{\mathcal{C} \leftarrow \mathcal{B}}\]
@@ -740,6 +717,18 @@ Sled matrike je vsota vseh diagonalnih elementov.
         (A+B)^T &= A^T+B^T  &  (AB)^T &= B^TA^T
     \end{aligned}
 \end{equation*}
+
+\subsection{Vektorski produkt}
+\[a \times b = \begin{vmatrix}
+    i & j & k\\
+    a_1 & a_2 & a_3\\
+    b_1 & b_2 & b_3\\
+\end{vmatrix}\]
+
+$a\times b = -(b \times a)$\\
+$a \times (b+c) = (a\times b) + (a\times c)$\\
+$[a,b,c] = \langle a, b \times c \rangle$\\
+$[a,b,c] = -[c,b,a]$ Če zamenjamo 2 parametra se rezultat negira.
 
 \end{multicols}
 \end{document}
